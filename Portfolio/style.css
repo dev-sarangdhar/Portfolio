@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --white-clr:#fff;
+    --black-clr:#000;
+    --gray-clr:#ECECEC;
+    --bhagwa-clr:#ff9602;
+    --beige-clr: beige;
+}
+ 
+.main-wrapper{
+    min-height: 100vh;
+    background: var(--black-clr);
+}
+
+.working-area{
+    width: 80%;
+    margin: auto;
+}
+
+.logo{
+    font-size: 1.8rem;
+    color: #fff;  
+}
+
+span{
+    color: var(--bhagwa-clr);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.navlist{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 14vh;
+}
+
+.navlink{
+    color: beige;
+    text-transform: uppercase;
+    font-size: .9rem;
+    letter-spacing: .08rem;
+    position: relative;
+}
+
+.active{
+    color: var(--bhagwa-clr);
+}
+
+.navlink::before,
+.active::before{
+    content: '';
+    position: absolute;
+    background: var(--bhagwa-clr);
+    height: .1rem;
+    width: 0%;
+    bottom: -10px;
+    transition: .5s ease-in-out;
+}
+
+.active::before{
+    width: 100%;
+}
+
+.navlink:hover::before{
+    width: 100%;
+}
+
+.navlink:hover{
+    color: var(--bhagwa-clr);
+    transition: .5s ease-in;
+}
+
+.fa-bars{
+    color: var(--white-clr);
+    font-size: .7rem;
+}
+
+.hamburger{
+    display: none;
+    z-index: 5;
+}
+
+.hero-section{
+    width: 100%;
+    min-height: calc(100vh - 14vh);
+    display: flex;
+    align-items: center;
+    gap: 30rem;
+}
+
+h4{
+    color: var(--beige-clr);
+    font-weight: 500;
+    letter-spacing: .2rem;
+}
+
+.circle{
+    height: 20px;
+    aspect-ratio: 1;
+    background: var(--bhagwa-clr);
+    border-radius: 50%;
+}
+
+.title{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+h1{
+    font-size: 5rem;
+    color: var(--beige-clr);
+    max-width: 500px;
+    letter-spacing: .5rem;
+    line-height: 6.5rem;
+}
+
+p{
+    color: var(--beige-clr);
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.5rem;
+    letter-spacing: .1rem;
+    margin-block: 1rem;
+}
+
+.btn-container{
+    display: flex;
+    gap: 2rem;
+    margin-block: 2rem;
+}
+
+button{
+    background: var(--bhagwa-clr);
+    color: beige;
+    border: .3rem solid var(--bhagwa-clr);
+    padding: .8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.border-btn{
+    background: transparent;
+}
+
+.border-btn:hover{
+    background: var(--bhagwa-clr);
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 400px;
+}
+
+.social-icons{
+    display: flex;
+    gap: 1rem;
+}
+
+.fa-brands{
+    color: var(--beige-clr);
+    font-size: 1.3rem;
+}
+
+.icon{
+    background: var(--bhagwa-clr);
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    transition: .3s ease-in-out;
+}
+
+.icon:hover{
+    transform: translateY(-20%);
+}
+
+.image-input{
+    width: 40rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: .4rem solid var(--bhagwa-clr);
+    background-image: url('images/20739b17-31f6-4e9a-9e51-543e4d21c686.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+/*Media Queries*/
+@media screen and (max-width: 680px){
+    .navlist{
+        flex-direction: column;
+        justify-content: center;
+        background: var(--bhagwa-clr);
+        position: absolute;
+        top: -100%;
+        left: 0;
+        right: 0;
+        height: 90vh;
+        z-index: 4;
+        transition: .5s ease-in-out;
+    }
+    .navlist-active{
+        top: 0;
+    }
+    .working-area{
+        width: 90%;
+    }
+    .hero-section{
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+    .image-input{
+        width: 23rem;
+    }
+    .hamburger{
+        display: block;
+    }
+    h1{
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+    p{
+        font-size: .95rem;
+        margin-top: 1rem;
+    }
+    .active,
+    .navlink:hover{
+        color: var(--black-clr);
+    }
+    .navlink::before{
+        background: var(--black-clr);
+    }
+}
